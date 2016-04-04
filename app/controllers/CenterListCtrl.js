@@ -18,12 +18,12 @@ weatherApp.controller('CenterListCtrl', ['$scope', '$routeParams', 'DataService'
 
     function getAllCenters() {
       console.log("Calling getAllCenters");
-      DataService.getAllCenters()
+      DataService.requestAllCenters()
         .success(function(data) {
           $scope.centers = data.Centers;
         })
         .error(function(data) {
-            console.log("Not able to fetch all centers : " + data);
+          console.log("Not able to fetch all centers : " + data);
         });
     }
 
